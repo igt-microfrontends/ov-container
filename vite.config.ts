@@ -9,12 +9,9 @@ export default defineConfig({
         federation({
             name: "remotes-app",
             filename: "remoteEntry.js",
-            exposes: {
-                "./useAuth": "./src/hooks/useAuth.ts",
-            },
             remotes: {
-                remoteDashboardApp: "http://localhost:4173/assets/remoteEntry.js",
-                remoteCalculatorApp: "http://localhost:4174/assets/remoteEntry.js",
+                remoteDashboardApp: "http://localhost:4174/assets/remoteEntry.js",
+                remoteCalculatorApp: "http://localhost:4173/assets/remoteEntry.js",
             },
             shared: ["react"],
         }),

@@ -1,5 +1,6 @@
-import { FC, useReducer } from "react";
+import { FC, useEffect, useReducer } from "react";
 import { AuthContext, AuthReducer } from "./";
+import { eventBus } from "../../event-bus/EventBus";
 
 export interface AuthState {
     loading?: boolean;
@@ -19,6 +20,10 @@ export const AuthProvider: FC<Props> = ({ children }) => {
     const setToken = (token: string) => {
         dispatch({ type: "[Auth] - Set token", payload: token });
     };
+
+    useEffect(() => {
+        eventBus.publish("authStateChanged", state);
+    }, [state]);
 
     return (
         <AuthContext.Provider

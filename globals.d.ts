@@ -2,12 +2,12 @@ declare module "remoteDashboardApp/DashboardApp" {
     import { FC } from "react";
     const DashboardApp: FC;
 
-    export { DashboardApp as App };
+    export default DashboardApp;
 }
 
 declare module "remoteCalculatorApp/CalculatorApp" {
     import { FC } from "react";
     const CalculatorApp: FC;
 
-    export { CalculatorApp as App };
+    export default CalculatorApp;
 }
