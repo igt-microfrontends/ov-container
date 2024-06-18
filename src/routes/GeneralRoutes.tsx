@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import { lazy, Suspense } from "react";
+import { AuthPage } from "../pages/AuthPage";
 
 const DashboardApp = lazy(
     () => import("remoteDashboardApp/DashboardApp").catch(() => import("../pages/ErrorPage")) as never
@@ -27,6 +28,7 @@ export const GeneralRoutes = () => {
                     </Suspense>
                 }
             />
+            <Route path="/auth" element={<AuthPage />} />
         </Routes>
     );
 };
